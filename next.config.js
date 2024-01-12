@@ -9,9 +9,9 @@ module.exports = {
         name: 'ocean_home',
         remotes: {
           //NOTE - Add the remote projects here
-          ocean_parent: `ocean_parent@http://localhost:3000/_next/static/${
-            isServer ? 'ssr' : 'chunks'
-          }/remoteEntry.js`,
+          ocean_parent: `ocean_parent@${
+            process.env.NEXT_PUBLIC_OCEAN_PARENT_URL
+          }/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
