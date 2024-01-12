@@ -3,7 +3,11 @@ import { useEffect, useState } from 'react';
 
 import 'tailwindcss/tailwind.css';
 
-export default function Home() {
+export default function Home({
+  cookiesToken,
+}: {
+  cookiesToken: string | undefined;
+}) {
   //NOTE - Local Storage
   const [localStorageToken, setLocalStorageToken] = useState('empty');
   useEffect(() => {
@@ -21,6 +25,7 @@ export default function Home() {
       <ul>
         <li>Local Storage: {localStorageToken}</li>
         <li>Zustand: {token}</li>
+        <li>Cookies: {cookiesToken}</li>
       </ul>
     </div>
   );
